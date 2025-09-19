@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Synthetica - AI News Authenticator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              mono: ['"Roboto Mono"', 'monospace'],
+            },
+            colors: {
+              'cyber-bg': '#0d1117',
+              'cyber-surface': '#161b22',
+              'cyber-border': '#30363d',
+              'cyber-text': '#c9d1d9',
+              'cyber-text-secondary': '#8b949e',
+              'cyber-cyan': '#39d3d3',
+              'cyber-magenta': '#f0f',
+              'cyber-green': '#32cd32',
+              'cyber-red': '#ff3131',
+              'cyber-yellow': '#ffd700',
+              'cyber-orange': '#ff8c00',
+            },
+            boxShadow: {
+              'cyber-glow-cyan': '0 0 5px #39d3d3, 0 0 10px #39d3d3, 0 0 15px #39d3d3',
+              'cyber-glow-green': '0 0 5px #32cd32, 0 0 10px #32cd32',
+              'cyber-glow-red': '0 0 5px #ff3131, 0 0 10px #ff3131',
+              'cyber-glow-yellow': '0 0 5px #ffd700, 0 0 10px #ffd700',
+              'cyber-glow-orange': '0 0 5px #ff8c00, 0 0 10px #ff8c00',
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'glow-pulse': 'glowPulse 3s infinite ease-in-out',
+              'scan-line': 'scan 5s infinite linear',
+              'text-highlight-red': 'highlightRed 5s infinite linear',
+              'text-highlight-green': 'highlightGreen 5s infinite linear',
+              'move-magnifier': 'moveMagnifier 6s infinite ease-in-out',
+              'glitch-flicker': 'glitchFlicker 2s infinite steps(1, end)',
+              'node-pulse': 'pulseNode 4s infinite ease-in-out',
+              'line-fade': 'fadeLine 5s infinite ease-in-out',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              glowPulse: {
+                '0%, 100%': { boxShadow: '0 0 20px rgba(57, 211, 211, 0.4)' },
+                '50%': { boxShadow: '0 0 35px rgba(57, 211, 211, 0.8)' },
+              },
+              scan: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(100px)' },
+              },
+              highlightRed: {
+                '0%, 25%, 100%': { fill: '#30363d' },
+                '30%, 50%': { fill: '#ff3131' },
+              },
+              highlightGreen: {
+                '0%, 60%, 100%': { fill: '#30363d' },
+                '65%, 85%': { fill: '#32cd32' },
+              },
+              moveMagnifier: {
+                '0%, 100%': { transform: 'translate(80px, 80px)' },
+                '25%': { transform: 'translate(140px, 60px)' },
+                '50%': { transform: 'translate(150px, 100px)' },
+                '75%': { transform: 'translate(70px, 110px)' },
+              },
+              pulseNode: {
+                '0%, 100%': { r: '2', opacity: '0.6' },
+                '50%': { r: '4', opacity: '1' },
+              },
+              fadeLine: {
+                '0%, 100%': { opacity: '0.1' },
+                '50%': { opacity: '0.5' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.20.0",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-cyber-bg font-mono">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
